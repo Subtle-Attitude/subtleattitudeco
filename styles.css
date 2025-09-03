@@ -52,7 +52,7 @@ body {
 .cta-buttons {
     display: flex;
     justify-content: center;
-    gap: 3px; /* Reduced gap to 6px for tighter inline spacing */
+    gap: 0px; /* Reduced gap to 6px for tighter inline spacing */
     flex-wrap: wrap; /* Allow wrapping if buttons are too wide */
 }
 
@@ -74,7 +74,7 @@ body {
     box-shadow: 0 0 15px rgba(0, 188, 212, 0.5), 0 0 25px rgba(0, 151, 167, 0.3);
     transition: all 0.3s ease;
     z-index: 1;
-    max-width: 250px;
+    max-width: 225px;
     text-align: center;
     white-space: normal;
     overflow-wrap: break-word;
