@@ -134,11 +134,12 @@ body {
 /* Specific styling for "Curious about Your Atlas Journal Companion..." */
 .atlas-deck-description {
     font-family: 'Playfair Display', Arial, sans-serif;
-    font-size: 20px; /* Matches .app-intro and .section p */
+    font-size: 18px; /* Matches .subtext, slightly smaller than .section p */
     font-weight: normal;
-    color: #fff; /* White to match .app-intro */
+    color: #fff; /* White to match surrounding text */
+    text-shadow: 0 0 5px #008ba3; /* Subtle glow to align with .atlas-deck .note */
     max-width: 800px;
-    margin: 15px auto; /* Matches .section p spacing */
+    margin: 0 auto 15px; /* Matches .section p spacing */
 }
 
 /* Specific styling for "Atlas is a three-category..." */
@@ -471,8 +472,9 @@ body.modal-open {
 
     /* Specific styling for "Curious about Your Atlas Journal Companion..." on mobile */
     .atlas-deck-description {
-        font-size: 15px; /* Matches .app-intro and .section p */
-        margin: 10px auto; /* Reduced spacing for mobile */
+        font-size: 15px; /* Matches .subtext and .section p */
+        text-shadow: 0 0 5px #008ba3; /* Subtle glow */
+        margin: 0 auto 10px; /* Reduced bottom margin for mobile */
     }
 
     /* Specific styling for "Atlas is a three-category..." on mobile */
