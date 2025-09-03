@@ -194,6 +194,18 @@ body {
 
 /* Larger note text in atlas-deck section with deeper teal glow */
 .atlas-deck .note {
+    font-family: 'Playfair Display', Arial, sans-serif;
+    font-size: 22;
+    font-weight: normal;
+    font-style: italic;
+    margin: 15px auto;
+    color: #fdffff;
+}
+
+/* Investor note in vision-impact section */
+.vision-impact .note {
+
+}
     margin-top: 25px;
     margin-bottom: 25px;
     font-family: 'Playfair Display', Arial, sans-serif;
@@ -202,17 +214,6 @@ body {
     font-style: italic;
     color: #f4f6f7;
     text-shadow: 0 0 5px #008ba3;
-}
-
-/* Investor note in vision-impact section */
-.vision-impact .note {
-    font-family: 'Playfair Display', Arial, sans-serif;
-    font-size: 16px;
-    font-weight: normal;
-    font-style: italic;
-    margin: 15px auto;
-    color: #fdffff;
-}
 
 .features {
     list-style: none;
