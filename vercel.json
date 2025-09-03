@@ -1,39 +1,21 @@
 {
     "version": 2,
     "builds": [
-        {
-            "src": "*.html",
-            "use": "@vercel/static"
-        },
-        {
-            "src": "styles.css",
-            "use": "@vercel/static"
-        },
-        {
-            "src": "script.js",
-            "use": "@vercel/static"
-        },
-        {
-            "src": "images/*",
-            "use": "@vercel/static"
-        }
+        { "src": "*.html", "use": "@vercel/static" },
+        { "src": "styles.css", "use": "@vercel/static" },
+        { "src": "script.js", "use": "@vercel/static" },
+        { "src": "images/*", "use": "@vercel/static" }
     ],
     "routes": [
         {
             "src": "/styles.css",
-            "dest": "/styles.css"
+            "dest": "/styles.css",
+            "headers": {
+                "Cache-Control": "public, max-age=0, must-revalidate"
+            }
         },
-        {
-            "src": "/script.js",
-            "dest": "/script.js"
-        },
-        {
-            "src": "/images/(.*)",
-            "dest": "/images/$1"
-        },
-        {
-            "src": "/(.*)",
-            "dest": "/index.html"
-        }
+        { "src": "/script.js", "dest": "/script.js" },
+        { "src": "/images/(.*)", "dest": "/images/$1" },
+        { "src": "/(.*)", "dest": "/index.html" }
     ]
 }
