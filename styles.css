@@ -16,11 +16,11 @@ body {
 }
 
 .hero-image {
-    max-width: 60%; /* Further scaled down from 70% */
-    max-height: 300px; /* Further scaled down from 350px */
+    max-width: 60%;
+    max-height: 300px;
     height: auto;
     margin-bottom: 20px;
-    margin-top: -10px; /* Retained upward shift */
+    margin-top: -10px;
     display: block;
     overflow: visible;
     margin-left: auto;
@@ -54,7 +54,7 @@ body {
 .cta-buttons {
     display: flex;
     justify-content: center;
-    gap: 28px; /* Increased from 18px to 28px for additional 10px spacing */
+    gap: 28px; /* Maintained 28px gap */
     flex-wrap: wrap;
 }
 
@@ -130,9 +130,19 @@ body {
     text-align: center;
 }
 
+/* Specific styling for "Atlas is a three-category..." */
+.app-section p:nth-child(2) {
+    color: #fff; /* Plain white, no glow */
+    font-family: 'Playfair Display', Arial, sans-serif;
+    font-size: 20px;
+    font-weight: normal;
+    max-width: 800px;
+    margin: 0 auto 15px;
+}
+
 /* Specific styling for "Atlas Journal Companion App offers..." */
 .app-section p:nth-child(3) {
-    margin-top: 30px; /* Increased space above */
+    margin-top: 30px; /* More space above */
     margin-bottom: 15px;
     text-shadow: 0 0 8px #00bcd4, 0 0 15px #00bcd4; /* Glowing effect */
     font-family: 'Playfair Display', Arial, sans-serif;
@@ -162,7 +172,7 @@ body {
 
 /* Specific styling for "Currently in design..." */
 .inner-atlas p:first-child {
-    color: #00bcd4; /* Set to teal */
+    color: #00bcd4; /* Teal color */
     font-family: 'Playfair Display', Arial, sans-serif;
     font-size: 20px;
     font-weight: normal;
@@ -194,18 +204,6 @@ body {
 
 /* Larger note text in atlas-deck section with deeper teal glow */
 .atlas-deck .note {
-    font-family: 'Playfair Display', Arial, sans-serif;
-    font-size: 22;
-    font-weight: normal;
-    font-style: italic;
-    margin: 15px auto;
-    color: #fdffff;
-}
-
-/* Investor note in vision-impact section */
-.vision-impact .note {
-
-}
     margin-top: 25px;
     margin-bottom: 25px;
     font-family: 'Playfair Display', Arial, sans-serif;
@@ -214,6 +212,17 @@ body {
     font-style: italic;
     color: #f4f6f7;
     text-shadow: 0 0 5px #008ba3;
+}
+
+/* Investor note in vision-impact section */
+.vision-impact .note {
+    font-family: 'Playfair Display', Arial, sans-serif;
+    font-size: 16px;
+    font-weight: normal;
+    font-style: italic;
+    margin: 15px auto;
+    color: #fdffff;
+}
 
 .features {
     list-style: none;
@@ -442,10 +451,16 @@ body.modal-open {
 
     .tagline {
         font-size: 15px;
-        color: #00bcd4; /* Maintain teal color on mobile */
+        color: #00bcd4;
     }
 
     .subtext, .section p, .footer-content a, .footer-content p {
+        font-size: 15px;
+    }
+
+    /* Specific styling for "Atlas is a three-category..." on mobile */
+    .app-section p:nth-child(2) {
+        color: #fff; /* Plain white, no glow */
         font-size: 15px;
     }
 
@@ -454,13 +469,14 @@ body.modal-open {
         margin-top: 20px; /* Slightly less space on mobile */
         margin-bottom: 15px;
         text-shadow: 0 0 8px #00bcd4, 0 0 15px #00bcd4; /* Retain glow */
-        font-size: 15px; /* Match .section p */
+        font-size: 15px;
     }
 
     /* Specific styling for "Currently in design..." on mobile */
     .inner-atlas p:first-child {
-        color: #00bcd4; /* Maintain teal on mobile */
-        font-size: 15px; /* Match .section p */
+        color: #00bcd4;
+        font-size: 15px;
+        margin-top: 5px; /* Reduced top padding on mobile */
     }
 
     .vision-impact .note {
@@ -488,21 +504,21 @@ body.modal-open {
 
     /* Hero image on mobile */
     .hero-image {
-        max-width: 70%; /* Further scaled down from 80% */
-        max-height: 250px; /* Further scaled down from 300px */
-        margin-top: -5px; /* Retained upward shift */
+        max-width: 70%;
+        max-height: 250px;
+        margin-top: -5px;
     }
 
     /* Keep CTA buttons inline on mobile with 28px gap */
     .cta-buttons {
         flex-direction: row;
-        gap: 28px; /* Consistent 28px gap on mobile */
+        gap: 28px;
         flex-wrap: wrap;
     }
 
     /* Override margins for cta-button inside cta-buttons on mobile */
     .cta-buttons .cta-button {
-        margin: 10px 0; /* Remove horizontal auto margins to respect flex gap */
+        margin: 10px 0;
     }
 
     .cta-button, .cta-button.primary, .cta-button.secondary {
