@@ -54,7 +54,7 @@ body {
 .cta-buttons {
     display: flex;
     justify-content: center;
-    gap: 28px; /* Maintained 28px gap */
+    gap: 28px; /* 28px gap, adjust to 38px if needed */
     flex-wrap: wrap;
 }
 
@@ -83,7 +83,7 @@ body {
     word-break: break-word;
 }
 
-/* Override margins for cta-button inside cta-buttons to prevent conflict */
+/* Override margins for cta-button inside cta-buttons */
 .cta-buttons .cta-button {
     margin: 10px 0; /* Remove horizontal auto margins to respect flex gap */
 }
@@ -131,7 +131,7 @@ body {
 }
 
 /* Specific styling for "Atlas is a three-category..." */
-.app-section p:nth-child(2) {
+.app-intro {
     color: #fff; /* Plain white, no glow */
     font-family: 'Playfair Display', Arial, sans-serif;
     font-size: 20px;
@@ -141,7 +141,7 @@ body {
 }
 
 /* Specific styling for "Atlas Journal Companion App offers..." */
-.app-section p:nth-child(3) {
+.app-framework {
     margin-top: 30px; /* More space above */
     margin-bottom: 15px;
     text-shadow: 0 0 8px #00bcd4, 0 0 15px #00bcd4; /* Glowing effect */
@@ -171,7 +171,7 @@ body {
 }
 
 /* Specific styling for "Currently in design..." */
-.inner-atlas p:first-child {
+.inner-atlas-intro {
     color: #00bcd4; /* Teal color */
     font-family: 'Playfair Display', Arial, sans-serif;
     font-size: 20px;
@@ -459,24 +459,24 @@ body.modal-open {
     }
 
     /* Specific styling for "Atlas is a three-category..." on mobile */
-    .app-section p:nth-child(2) {
-        color: #fff; /* Plain white, no glow */
+    .app-intro {
+        color: #fff;
         font-size: 15px;
     }
 
     /* Specific styling for "Atlas Journal Companion App offers..." on mobile */
-    .app-section p:nth-child(3) {
-        margin-top: 20px; /* Slightly less space on mobile */
+    .app-framework {
+        margin-top: 20px;
         margin-bottom: 15px;
-        text-shadow: 0 0 8px #00bcd4, 0 0 15px #00bcd4; /* Retain glow */
+        text-shadow: 0 0 8px #00bcd4, 0 0 15px #00bcd4;
         font-size: 15px;
     }
 
     /* Specific styling for "Currently in design..." on mobile */
-    .inner-atlas p:first-child {
+    .inner-atlas-intro {
         color: #00bcd4;
         font-size: 15px;
-        margin-top: 5px; /* Reduced top padding on mobile */
+        margin-top: 5px; /* Reduced top padding */
     }
 
     .vision-impact .note {
@@ -512,7 +512,7 @@ body.modal-open {
     /* Keep CTA buttons inline on mobile with 28px gap */
     .cta-buttons {
         flex-direction: row;
-        gap: 28px;
+        gap: 28px; /* Adjust to 38px if needed */
         flex-wrap: wrap;
     }
 
