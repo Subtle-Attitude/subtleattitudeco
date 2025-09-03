@@ -52,7 +52,8 @@ body {
 .cta-buttons {
     display: flex;
     justify-content: center;
-    gap: 10px;
+    gap: 5px; /* Reduced gap to bring buttons closer together */
+    flex-wrap: wrap; /* Allow wrapping if buttons are too wide */
 }
 
 /* Buttons */
@@ -60,8 +61,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 10px auto;
-    padding: 15px 30px;
+    margin: 10px 0; /* Removed auto horizontal margin for tighter alignment */
+    padding: 12px 25px; /* Reduced padding for more compact buttons */
     background: rgba(0, 0, 0, 0.934);
     color: #ffffff;
     text-decoration: none;
@@ -73,7 +74,7 @@ body {
     box-shadow: 0 0 15px rgba(0, 188, 212, 0.5), 0 0 25px rgba(0, 151, 167, 0.3);
     transition: all 0.3s ease;
     z-index: 1;
-    max-width: 300px;
+    max-width: 250px; /* Reduced max-width for tighter layout */
     text-align: center;
     white-space: normal;
     overflow-wrap: break-word;
@@ -134,7 +135,7 @@ body {
 .section p {
     font-family: 'Playfair Display', Arial, sans-serif;
     font-size: 20px;
-    font-weight: italic;
+    font-weight: normal; /* Changed to normal to differentiate from subtext */
     max-width: 800px;
     margin: 0 auto 15px;
 }
@@ -173,6 +174,16 @@ body {
     text-shadow: 0 0 5px #008ba3;
 }
 
+/* Investor note in vision-impact section */
+.vision-impact .note {
+    font-family: 'Playfair Display', Arial, sans-serif;
+    font-size: 16px; /* Smaller than surrounding text (20px) */
+    font-weight: normal;
+    font-style: italic; /* Ensure italicized */
+    margin: 15px auto;
+    color: #fdffff;
+}
+
 .features {
     list-style: none;
     padding: 0;
@@ -182,8 +193,9 @@ body {
 
 .features li {
     font-family: 'Playfair Display', Arial, sans-serif;
-    font-size: 18px;
-    font-weight: italic;
+    font-size: 16px; /* Slightly smaller than surrounding .section p (20px) */
+    font-weight: normal; /* Normal weight for subtext */
+    font-style: italic; /* Ensure italicized */
     margin: 8px 0;
     text-align: center;
     color: #fdffff;
@@ -397,8 +409,12 @@ body.modal-open {
         font-size: 17px;
     }
 
-    .tagline, .subtext, .section p, .features li, .footer-content a, .footer-content p {
+    .tagline, .subtext, .section p, .footer-content a, .footer-content p {
         font-size: 15px;
+    }
+
+    .vision-impact .note {
+        font-size: 14px; /* Slightly smaller for mobile */
     }
 
     .atlas-deck .note {
@@ -420,14 +436,21 @@ body.modal-open {
         max-height: 350px;
     }
 
+    /* Keep CTA buttons inline (side by side) on mobile */
     .cta-buttons {
-        flex-direction: column;
+        flex-direction: row; /* Override to keep side by side */
+        gap: 5px; /* Consistent smaller gap */
+        flex-wrap: wrap;
     }
 
     .cta-button, .cta-button.primary, .cta-button.secondary {
-        max-width: 200px;
-        padding: 10px 20px;
-        font-size: 14px;
+        max-width: 160px; /* Smaller buttons on mobile */
+        padding: 8px 15px; /* Reduced padding for mobile */
+        font-size: 12px; /* Smaller font for mobile */
+    }
+
+    .features li {
+        font-size: 14px; /* Slightly smaller for mobile */
     }
 
     .info-btn img {
