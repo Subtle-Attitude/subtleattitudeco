@@ -16,10 +16,11 @@ body {
 }
 
 .hero-image {
-    max-width: 80%;
-    max-height: 400px;
+    max-width: 70%; /* Scaled down from 80% */
+    max-height: 350px; /* Scaled down from 400px */
     height: auto;
     margin-bottom: 20px;
+    margin-top: -10px; /* Shifted up slightly */
     display: block;
     overflow: visible;
     margin-left: auto;
@@ -40,6 +41,7 @@ body {
     font-size: 24px;
     font-weight: bold;
     margin: 10px 0;
+    color: #00bcd4; /* Set to teal for "Designing tech for the soul" */
 }
 
 .subtext {
@@ -52,8 +54,8 @@ body {
 .cta-buttons {
     display: flex;
     justify-content: center;
-    gap: 10px; /* Increased to 10px for 5px shift away from each button */
-    flex-wrap: wrap; /* Allow wrapping if buttons are too wide */
+    gap: 18px; /* Increased from 10px to 18px for additional 8px spacing */
+    flex-wrap: wrap;
 }
 
 /* Buttons */
@@ -89,9 +91,9 @@ body {
 .cta-button:hover,
 .cta-button:focus {
     background: linear-gradient(45deg, rgba(0, 188, 212, 0.2), rgba(0, 151, 167, 0.2));
-    box-shadow: 0 0 20px rgba(0, 188, 212, 0.8), 0 0 30px rgba(0, 151, 167, 0.5); /* Reduced shadow spread */
+    box-shadow: 0 0 20px rgba(0, 188, 212, 0.8), 0 0 30px rgba(0, 151, 167, 0.5);
     outline: 2px solid #00bcd4;
-    outline-offset: 3px; /* Increased to prevent outline overlap */
+    outline-offset: 3px;
 }
 
 .cta-button.primary {
@@ -103,9 +105,9 @@ body {
 .cta-button.primary:hover,
 .cta-button.primary:focus {
     background: linear-gradient(45deg, rgba(0, 151, 167, 0.2), rgba(0, 151, 167, 0.2));
-    box-shadow: 0 0 20px rgba(0, 151, 167, 0.8), 0 0 30px rgba(0, 151, 167, 0.5); /* Reduced shadow spread */
+    box-shadow: 0 0 20px rgba(0, 151, 167, 0.8), 0 0 30px rgba(0, 151, 167, 0.5);
     outline: 2px solid #0097a7;
-    outline-offset: 3px; /* Increased to prevent outline overlap */
+    outline-offset: 3px;
 }
 
 .cta-button.secondary {
@@ -117,9 +119,9 @@ body {
 .cta-button.secondary:hover,
 .cta-button.secondary:focus {
     background: linear-gradient(45deg, rgba(77, 208, 225, 0.2), rgba(77, 208, 225, 0.2));
-    box-shadow: 0 0 20px rgba(77, 208, 225, 0.8), 0 0 30px rgba(77, 208, 225, 0.5); /* Reduced shadow spread */
+    box-shadow: 0 0 20px rgba(77, 208, 225, 0.8), 0 0 30px rgba(77, 208, 225, 0.5);
     outline: 2px solid #4dd0e1;
-    outline-offset: 3px; /* Increased to prevent outline overlap */
+    outline-offset: 3px;
 }
 
 /* Sections */
@@ -414,7 +416,12 @@ body.modal-open {
         font-size: 17px;
     }
 
-    .tagline, .subtext, .section p, .footer-content a, .footer-content p {
+    .tagline {
+        font-size: 15px; /* Adjusted for mobile */
+        color: #00bcd4; /* Maintain teal color on mobile */
+    }
+
+    .subtext, .section p, .footer-content a, .footer-content p {
         font-size: 15px;
     }
 
@@ -441,10 +448,17 @@ body.modal-open {
         max-height: 350px;
     }
 
-    /* Keep CTA buttons inline on mobile with 10px gap */
+    /* Hero image on mobile */
+    .hero-image {
+        max-width: 80%; /* Slightly larger on mobile to maintain visibility */
+        max-height: 300px; /* Scaled down for mobile */
+        margin-top: -5px; /* Slightly less upward shift on mobile */
+    }
+
+    /* Keep CTA buttons inline on mobile with 18px gap */
     .cta-buttons {
         flex-direction: row;
-        gap: 10px; /* Consistent 10px gap on mobile */
+        gap: 18px; /* Consistent 18px gap on mobile */
         flex-wrap: wrap;
     }
 
