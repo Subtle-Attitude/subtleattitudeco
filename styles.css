@@ -525,7 +525,7 @@ body.modal-open {
     .hero-image {
         max-width: 90%;
         max-height: 350px;
-        margin-top: 15px;
+        margin-top: -10px;
     }
 
     /* Keep CTA buttons inline on mobile with 28px gap */
