@@ -52,13 +52,13 @@ body {
 .cta-buttons {
     display: flex;
     justify-content: center;
-    gap: 6px; /* Tighter inline spacing */
+    gap: 10px; /* Increased to 10px for 5px shift away from each button */
     flex-wrap: wrap; /* Allow wrapping if buttons are too wide */
 }
 
 /* Buttons */
 .cta-button {
-    display: flex; /* Changed to flex for consistency in flex containers */
+    display: flex;
     align-items: center;
     justify-content: center;
     margin: 10px auto; /* Centers single buttons in sections */
@@ -89,9 +89,9 @@ body {
 .cta-button:hover,
 .cta-button:focus {
     background: linear-gradient(45deg, rgba(0, 188, 212, 0.2), rgba(0, 151, 167, 0.2));
-    box-shadow: 0 0 25px rgba(0, 188, 212, 0.8), 0 0 35px rgba(0, 151, 167, 0.5);
+    box-shadow: 0 0 20px rgba(0, 188, 212, 0.8), 0 0 30px rgba(0, 151, 167, 0.5); /* Reduced shadow spread */
     outline: 2px solid #00bcd4;
-    outline-offset: 2px;
+    outline-offset: 3px; /* Increased to prevent outline overlap */
 }
 
 .cta-button.primary {
@@ -103,9 +103,9 @@ body {
 .cta-button.primary:hover,
 .cta-button.primary:focus {
     background: linear-gradient(45deg, rgba(0, 151, 167, 0.2), rgba(0, 151, 167, 0.2));
-    box-shadow: 0 0 25px rgba(0, 151, 167, 0.8), 0 0 35px rgba(0, 151, 167, 0.5);
+    box-shadow: 0 0 20px rgba(0, 151, 167, 0.8), 0 0 30px rgba(0, 151, 167, 0.5); /* Reduced shadow spread */
     outline: 2px solid #0097a7;
-    outline-offset: 2px;
+    outline-offset: 3px; /* Increased to prevent outline overlap */
 }
 
 .cta-button.secondary {
@@ -117,9 +117,9 @@ body {
 .cta-button.secondary:hover,
 .cta-button.secondary:focus {
     background: linear-gradient(45deg, rgba(77, 208, 225, 0.2), rgba(77, 208, 225, 0.2));
-    box-shadow: 0 0 25px rgba(77, 208, 225, 0.8), 0 0 35px rgba(77, 208, 225, 0.5);
+    box-shadow: 0 0 20px rgba(77, 208, 225, 0.8), 0 0 30px rgba(77, 208, 225, 0.5); /* Reduced shadow spread */
     outline: 2px solid #4dd0e1;
-    outline-offset: 2px;
+    outline-offset: 3px; /* Increased to prevent outline overlap */
 }
 
 /* Sections */
@@ -441,10 +441,10 @@ body.modal-open {
         max-height: 350px;
     }
 
-    /* Keep CTA buttons inline on mobile with tighter spacing */
+    /* Keep CTA buttons inline on mobile with 10px gap */
     .cta-buttons {
         flex-direction: row;
-        gap: 6px; /* Consistent tighter gap on mobile */
+        gap: 10px; /* Consistent 10px gap on mobile */
         flex-wrap: wrap;
     }
 
