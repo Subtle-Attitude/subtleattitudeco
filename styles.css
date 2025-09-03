@@ -45,14 +45,14 @@ body {
 .subtext {
     font-family: 'Playfair Display', Arial, sans-serif;
     font-size: 18px;
-    font-weight: italic;
+    font-style: italic;
     margin-bottom: 40px;
 }
 
 .cta-buttons {
     display: flex;
     justify-content: center;
-    gap: 15px;
+    gap: 10px;
 }
 
 /* Buttons */
