@@ -52,13 +52,13 @@ body {
 .cta-buttons {
     display: flex;
     justify-content: center;
-    gap: 0px; /* Reduced gap to 6px for tighter inline spacing */
+    gap: 6px; /* Tighter inline spacing */
     flex-wrap: wrap; /* Allow wrapping if buttons are too wide */
 }
 
 /* Buttons */
 .cta-button {
-    display: inline-flex;
+    display: flex; /* Changed to flex for consistency in flex containers */
     align-items: center;
     justify-content: center;
     margin: 10px auto; /* Centers single buttons in sections */
@@ -74,11 +74,16 @@ body {
     box-shadow: 0 0 15px rgba(0, 188, 212, 0.5), 0 0 25px rgba(0, 151, 167, 0.3);
     transition: all 0.3s ease;
     z-index: 1;
-    max-width: 225px;
+    max-width: 250px;
     text-align: center;
     white-space: normal;
     overflow-wrap: break-word;
     word-break: break-word;
+}
+
+/* Override margins for cta-button inside cta-buttons to prevent conflict */
+.cta-buttons .cta-button {
+    margin: 10px 0; /* Remove horizontal auto margins to respect flex gap */
 }
 
 .cta-button:hover,
@@ -441,6 +446,11 @@ body.modal-open {
         flex-direction: row;
         gap: 6px; /* Consistent tighter gap on mobile */
         flex-wrap: wrap;
+    }
+
+    /* Override margins for cta-button inside cta-buttons on mobile */
+    .cta-buttons .cta-button {
+        margin: 10px 0; /* Remove horizontal auto margins to respect flex gap */
     }
 
     .cta-button, .cta-button.primary, .cta-button.secondary {
