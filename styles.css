@@ -52,7 +52,7 @@ body {
 .cta-buttons {
     display: flex;
     justify-content: center;
-    gap: 6px; /* Reduced gap to 6px for tighter inline spacing */
+    gap: 3px; /* Reduced gap to 6px for tighter inline spacing */
     flex-wrap: wrap; /* Allow wrapping if buttons are too wide */
 }
 
