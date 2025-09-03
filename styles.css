@@ -52,16 +52,16 @@ body {
 .cta-buttons {
     display: flex;
     justify-content: center;
-    gap: 8px; /* Adjusted gap for balanced spacing in hero section */
+    gap: 6px; /* Reduced gap to 6px for tighter inline spacing */
     flex-wrap: wrap; /* Allow wrapping if buttons are too wide */
 }
 
 /* Buttons */
 .cta-button {
-    display: inline-flex; /* Changed to inline-flex for centering */
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    margin: 10px auto; /* Restored auto margins for centering single buttons */
+    margin: 10px auto; /* Centers single buttons in sections */
     padding: 12px 25px;
     background: rgba(0, 0, 0, 0.934);
     color: #ffffff;
@@ -120,7 +120,7 @@ body {
 /* Sections */
 .section {
     padding: 50px 20px;
-    text-align: center; /* Ensures centering for child elements */
+    text-align: center;
 }
 
 .section h2 {
@@ -436,10 +436,10 @@ body.modal-open {
         max-height: 350px;
     }
 
-    /* Keep CTA buttons inline on mobile */
+    /* Keep CTA buttons inline on mobile with tighter spacing */
     .cta-buttons {
         flex-direction: row;
-        gap: 8px; /* Consistent spacing on mobile */
+        gap: 6px; /* Consistent tighter gap on mobile */
         flex-wrap: wrap;
     }
 
