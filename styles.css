@@ -193,14 +193,15 @@ body {
 }
 
 .section-video {
-    max-width: 80%;
-    max-height: 400px;
-    height: auto;
+    width: 100%;
+    max-width: 800px; /* Matches atlas-landing */
+    height: 450px; /* Matches atlas-landing */
     margin: 20px auto;
     display: block;
     border-radius: 10px;
     border: 1px solid rgba(0, 255, 255, 0.3);
     box-shadow: 0 0 20px rgba(0, 255, 255, 0.2), inset 0 0 10px rgba(255, 0, 255, 0.1);
+    object-fit: contain; /* No clipping */
 }
 
 .section-video:hover {
@@ -529,7 +530,10 @@ body.modal-open {
         padding: 8px 15px;
         font-size: 12px;
     }
-
+    .section-video {
+        max-width: 90%;
+        height: 300px; /* Adjusted for mobile */
+    }
     .features li {
         font-size: 14px;
     }
