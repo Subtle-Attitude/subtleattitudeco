@@ -1,21 +1,55 @@
 {
-    "version": 2,
-    "builds": [
-        { "src": "*.html", "use": "@vercel/static" },
-        { "src": "styles.css", "use": "@vercel/static" },
-        { "src": "script.js", "use": "@vercel/static" },
-        { "src": "images/*", "use": "@vercel/static" }
-    ],
-    "routes": [
-        {
-            "src": "/styles.css",
-            "dest": "/styles.css",
-            "headers": {
-                "Cache-Control": "public, max-age=0, must-revalidate"
-            }
-        },
-        { "src": "/script.js", "dest": "/script.js" },
-        { "src": "/images/(.*)", "dest": "/images/$1" },
-        { "src": "/(.*)", "dest": "/index.html" }
-    ]
+  "version": 2,
+  "builds": [
+    { "src": "*.html", "use": "@vercel/static" },
+    { "src": "styles.css", "use": "@vercel/static" },
+    { "src": "script.js", "use": "@vercel/static" },
+    { "src": "images/*", "use": "@vercel/static" }
+  ],
+  "routes": [
+    {
+      "src": "/styles.css",
+      "dest": "/styles.css",
+      "headers": {
+        "Cache-Control": "public, max-age=0, must-revalidate"
+      }
+    },
+    {
+      "src": "/script.js",
+      "dest": "/script.js",
+      "headers": {
+        "Cache-Control": "public, max-age=0, must-revalidate"
+      }
+    },
+    {
+      "src": "/images/(.*\\.mp4)",
+      "dest": "/images/$1",
+      "headers": {
+        "Content-Type": "video/mp4",
+        "Cache-Control": "public, max-age=31536000, immutable"
+      }
+    },
+    {
+      "src": "/images/(.*\\.webm)",
+      "dest": "/images/$1",
+      "headers": {
+        "Content-Type": "video/webm",
+        "Cache-Control": "public, max-age=31536000, immutable"
+      }
+    },
+    {
+      "src": "/images/(.*\\.(png|jpg|jpeg|gif))",
+      "dest": "/images/$1",
+      "headers": {
+        "Cache-Control": "public, max-age=31536000, immutable"
+      }
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html",
+      "headers": {
+        "Cache-Control": "public, max-age=0, must-revalidate"
+      }
+    }
+  ]
 }
