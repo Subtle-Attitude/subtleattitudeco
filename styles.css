@@ -69,7 +69,7 @@ body {
     border-radius: 12px;
 }
 
-/* Navigation Row – horizontal, right after hero, toward top */
+/* Navigation Row – horizontal, right after hero */
 .section-nav {
     display: flex;
     justify-content: center;
@@ -121,10 +121,11 @@ body {
     text-shadow: 0 0 10px #00bcd4;
 }
 
-/* All section images scaled down 35% (max-width 65%) */
+/* Section images: 65% on desktop, full width on mobile */
 .section-image,
 .support-image {
     max-width: 65%;
+    width: 100%;
     height: auto;
     display: block;
     margin: 2.5rem auto;
@@ -143,7 +144,7 @@ body {
     box-shadow: 0 0 30px rgba(0, 188, 212, 0.4);
 }
 
-/* Section Buttons (only where needed: Tech, Journals x2, Unfolding) */
+/* Section Buttons */
 .section-button {
     display: inline-block;
     margin: 2.5rem 0 3.5rem;
@@ -220,7 +221,7 @@ body {
     filter: drop-shadow(0 0 15px #00bcd4);
 }
 
-/* Responsive */
+/* Responsive – full width images on mobile */
 @media (max-width: 768px) {
     .hero { padding: 60px 15px 40px; }
     .hero h1 { font-size: 2.4rem; }
@@ -243,14 +244,16 @@ body {
     }
     .section h2 { font-size: 2.2rem; }
 
-    /* On mobile, make section images a bit larger for readability */
+    /* Full width on mobile for better fit */
     .section-image,
     .support-image {
-        max-width: 85%;
+        max-width: 100%;
     }
 
     .section-button {
         padding: 0.9rem 2rem;
         font-size: 1rem;
+        width: 100%;
+        max-width: 320px;
     }
 }
