@@ -32,7 +32,7 @@ body {
     width: 100%;
     height: 100%;
     object-fit: contain;
-    opacity: 0.12;           /* subtle visible shading – adjust 0.08–0.18 if needed */
+    opacity: 0.12;
 }
 
 .hero-content {
@@ -67,10 +67,9 @@ body {
     display: block;
     margin: 2rem auto 0;
     border-radius: 12px;
-    /* No glow, no shadow, no border */
 }
 
-/* Navigation Row (horizontal, right after hero) */
+/* Navigation Row */
 .section-nav {
     display: flex;
     flex-wrap: wrap;
@@ -123,9 +122,10 @@ body {
     text-shadow: 0 0 10px #00bcd4;
 }
 
+/* Scaled-down section images (35% smaller → max-width 65%) */
 .section-image,
 .support-image {
-    max-width: 100%;
+    max-width: 65%;              /* <-- 35% scale-down from full width */
     height: auto;
     display: block;
     margin: 2rem auto;
@@ -144,7 +144,7 @@ body {
     box-shadow: 0 0 30px rgba(0, 188, 212, 0.4);
 }
 
-/* Section Buttons (product links & Indiegogo) */
+/* Section Buttons */
 .section-button {
     display: inline-block;
     margin: 2rem 0 3rem;
@@ -234,6 +234,11 @@ body {
 
     .section { padding: 4rem 1rem; }
     .section h2 { font-size: 2.2rem; }
+
+    .section-image,
+    .support-image {
+        max-width: 80%;          /* Slightly larger on mobile for better visibility */
+    }
 
     .section-button { padding: 0.9rem 2rem; font-size: 1rem; }
 }
