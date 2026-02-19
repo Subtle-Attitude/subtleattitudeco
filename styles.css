@@ -10,9 +10,28 @@ body {
 /* Hero Section */
 .hero {
     text-align: center;
-    padding: 80px 20px;
+    padding: 100px 20px 60px;
     overflow: visible;
-    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('images/three-deck-spread.png') no-repeat center/80%;
+    position: relative;
+    background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.85));
+}
+
+.hero-background-logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.25;           /* subtle overlay – adjust to taste if needed */
+    pointer-events: none;
+}
+
+.hero-background-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
 }
 
 .hero-image {
@@ -50,19 +69,57 @@ body {
     margin-bottom: 40px;
 }
 
-.cta-buttons {
+/* Section Navigation – horizontal image buttons */
+.section-nav {
     display: flex;
-    justify-content: center;
-    gap: 28px;
     flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 30px 20px;
+    background: rgba(0, 0, 0, 0.6);
+    border-bottom: 1px solid rgba(0, 188, 212, 0.3);
 }
 
-/* Buttons */
+.nav-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #00bcd4;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    max-width: 180px;
+}
+
+.nav-btn img,
+.nav-btn .nav-video-thumb {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    border: 2px solid rgba(0, 188, 212, 0.4);
+    box-shadow: 0 0 15px rgba(0, 188, 212, 0.4);
+    transition: all 0.3s ease;
+}
+
+.nav-btn:hover img,
+.nav-btn:hover .nav-video-thumb {
+    transform: scale(1.06);
+    box-shadow: 0 0 25px rgba(0, 188, 212, 0.7);
+    border-color: #00bcd4;
+}
+
+.nav-btn span {
+    margin-top: 10px;
+    text-shadow: 0 0 8px #00bcd4;
+}
+
+/* Buttons (CTA) */
 .cta-button {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 10px auto;
+    margin: 20px auto;
     padding: 12px 25px;
     background: rgba(0, 0, 0, 0.934);
     color: #ffffff;
@@ -75,15 +132,11 @@ body {
     box-shadow: 0 0 15px rgba(0, 188, 212, 0.5), 0 0 25px rgba(0, 151, 167, 0.3);
     transition: all 0.3s ease;
     z-index: 1;
-    max-width: 250px;
+    max-width: 280px;
     text-align: center;
     white-space: normal;
     overflow-wrap: break-word;
     word-break: break-word;
-}
-
-.cta-buttons .cta-button {
-    margin: 10px 0;
 }
 
 .cta-button:hover,
@@ -128,37 +181,6 @@ body {
     text-align: center;
 }
 
-.atlas-deck-description {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 18px;
-    font-weight: 400;
-    color: #fff;
-    text-shadow: 0 0 5px #008ba3;
-    max-width: 800px;
-    margin: 0 auto 15px;
-}
-
-.app-intro {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 18px;
-    font-weight: 400;
-    font-style: italic;
-    margin: 15px auto;
-    color: #fdffff;
-}
-
-.app-framework {
-    margin-top: 30px;
-    margin-bottom: 15px;
-    text-shadow: 0 0 8px #00bcd4, 0 0 15px #00bcd4;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 20px;
-    font-weight: 400;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
 .section h2 {
     font-family: 'Montserrat', sans-serif;
     font-size: 30px;
@@ -175,87 +197,32 @@ body {
     margin: 0 auto 15px;
 }
 
-.inner-atlas-intro {
-    color: #00bcd4;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 20px;
-    font-weight: 400;
-    max-width: 800px;
-    margin: 0 auto 15px;
-}
-
+/* Section images – consistent sizing & styling */
 .section-image {
     max-width: 90%;
-    max-height: 400px;
+    max-height: 500px;
     height: auto;
-    margin: 20px auto;
+    margin: 25px auto;
     display: block;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 188, 212, 0.3);
+    box-shadow: 0 0 20px rgba(0, 188, 212, 0.25);
 }
 
 .section-video {
     width: 100%;
-    max-width: 800px; /* Matches atlas-landing */
-    height: 450px; /* Matches atlas-landing */
-    margin: 20px auto;
+    max-width: 800px;
+    height: 450px;
+    margin: 25px auto;
     display: block;
     border-radius: 10px;
     border: 1px solid rgba(0, 255, 255, 0.3);
     box-shadow: 0 0 20px rgba(0, 255, 255, 0.2), inset 0 0 10px rgba(255, 0, 255, 0.1);
-    object-fit: contain; /* No clipping */
+    object-fit: contain;
 }
 
 .section-video:hover {
     box-shadow: 0 0 30px rgba(0, 255, 255, 0.5), inset 0 0 15px rgba(255, 0, 255, 0.3);
-}
-
-.atlas-deck-image {
-    max-width: 90%;
-    max-height: 450px;
-}
-
-.atlas-deck .note {
-    margin-top: 25px;
-    margin-bottom: 25px;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 30px;
-    font-weight: 700;
-    color: #f4f6f7;
-    text-shadow: 0 0 5px #008ba3;
-}
-
-.vision-impact .note {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 16px;
-    font-weight: 400;
-    font-style: italic;
-    margin: 15px auto;
-    color: #fdffff;
-}
-
-.features {
-    list-style: none;
-    padding: 0;
-    margin: 15px auto;
-    max-width: 600px;
-}
-
-.features li {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 16px;
-    font-weight: 400;
-    font-style: italic;
-    margin: 15px auto;
-    color: #fdffff;
-}
-
-.deck-title {
-    color: #00bcd4;
-    font-weight: 700;
-    font-size: 28px;
-}
-
-.features.centered {
-    text-align: center;
 }
 
 /* Footer */
@@ -293,21 +260,6 @@ body {
 
 .footer-content a:hover {
     text-decoration: underline;
-}
-
-.newsletter form {
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-}
-
-.newsletter input {
-    padding: 8px;
-    border: none;
-    border-radius: 5px;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 16px;
-    font-weight: 500;
 }
 
 /* Artist Signature Button */
@@ -441,121 +393,92 @@ body.modal-open {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    .hero {
+        padding: 80px 15px 40px;
+    }
+
     .hero h1 {
-        font-size: 20px;
-    }
-
-    .section h2 {
-        font-size: 18px;
-    }
-
-    .footer-content h3 {
-        font-size: 17px;
+        font-size: 28px;
     }
 
     .tagline {
-        font-size: 15px;
-        color: #00bcd4;
+        font-size: 20px;
     }
 
-    .subtext, .section p, .footer-content a, .footer-content p {
-        font-size: 15px;
-    }
-
-    .atlas-deck-description {
-        font-size: 15px;
-        text-shadow: 0 0 5px #008ba3;
-        margin: 0 auto 10px;
-    }
-
-    .app-intro {
-        color: #fff;
-        font-size: 15px;
-    }
-
-    .app-framework {
-        margin-top: 20px;
-        margin-bottom: 15px;
-        text-shadow: 0 0 8px #00bcd4, 0 0 15px #00bcd4;
-        font-size: 15px;
-    }
-
-    .inner-atlas-intro {
-        color: #00bcd4;
-        font-size: 15px;
-        margin-top: 5px;
-    }
-
-    .vision-impact .note {
-        font-size: 14px;
-    }
-
-    .atlas-deck .note {
-        margin-top: 20px;
-        font-size: 18px;
-    }
-
-    .deck-title {
+    .subtext {
         font-size: 16px;
     }
 
-    .section-image, .section-video {
+    .hero-image {
         max-width: 90%;
-        max-height: 300px;
+        max-height: 220px;
     }
 
-    .atlas-deck-image {
+    .section-nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        padding: 20px 15px;
+    }
+
+    .nav-btn {
+        max-width: 280px;
+    }
+
+    .section h2 {
+        font-size: 24px;
+    }
+
+    .section p {
+        font-size: 16px;
+    }
+
+    .section-image,
+    .section-video {
         max-width: 95%;
         max-height: 350px;
     }
 
-    .hero-image {
-        max-width: 100%;
-        max-height: 450px;
-        margin-top: -10px;
-    }
-
-    .cta-buttons {
-        flex-direction: row;
-        gap: 10px;
-        flex-wrap: wrap;
-    }
-
-    .cta-buttons .cta-button {
-        margin: 10px 0;
-    }
-
-    .cta-button, .cta-button.primary, .cta-button.secondary {
-        max-width: 160px;
-        padding: 8px 15px;
-        font-size: 12px;
-    }
     .section-video {
-        max-width: 90%;
-        height: 300px; /* Adjusted for mobile */
+        height: 300px;
     }
-    .features li {
-        font-size: 14px;
+
+    .cta-button {
+        max-width: 240px;
+        padding: 10px 20px;
+        font-size: 15px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        gap: 25px;
     }
 
     .info-btn img {
-        width: 32px;
-        height: 32px;
+        width: 36px;
+        height: 36px;
     }
 
     .info-modal-content {
-        padding: 15px;
-        max-width: 80%;
-        font-size: 0.9em;
+        padding: 20px;
+        font-size: 0.95em;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 24px;
     }
 
-    .info-modal-content p {
-        font-size: 0.9em;
-        line-height: 1.4;
+    .tagline {
+        font-size: 18px;
     }
 
-    .info-modal-content .close-btn {
-        padding: 8px 16px;
-        font-size: 14px;
+    .subtext {
+        font-size: 15px;
+    }
+
+    .nav-btn span {
+        font-size: 1rem;
     }
 }
