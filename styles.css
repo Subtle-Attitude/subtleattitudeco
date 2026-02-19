@@ -257,3 +257,25 @@ body {
         max-width: 320px;
     }
 }
+.info-modal {
+    position: fixed !important;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999 !important;     /* ← bump this high */
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+.info-modal-content {
+    z-index: 10000 !important;
+    max-width: 90%;
+    max-height: 85vh;
+    overflow-y: auto;
+}
+
+body.modal-open {
+    overflow: hidden;
+}
