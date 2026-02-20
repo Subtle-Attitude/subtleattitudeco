@@ -144,7 +144,80 @@ body {
     box-shadow: 0 0 30px rgba(0, 188, 212, 0.4);
 }
 
-/* Section Buttons */
+/* Category Buttons in Theory – horizontal thumbnails (scaled down) */
+.category-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    margin: 2.5rem 0;
+}
+
+.category-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    transition: transform 0.3s ease;
+    max-width: 220px;
+}
+
+.category-btn:hover {
+    transform: scale(1.08);
+}
+
+.category-thumb {
+    width: 100%;
+    max-width: 180px;              /* Thumbnail size – adjust this value if needed */
+    height: auto;
+    background: transparent;       /* Ensures transparency shows */
+    border-radius: 12px;
+    border: 2px solid rgba(0, 188, 212, 0.5);
+    box-shadow: 0 0 15px rgba(0, 188, 212, 0.4);
+    transition: all 0.3s ease;
+}
+
+.category-btn span {
+    display: block;
+    margin-top: 0.8rem;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.1rem;
+    color: #00bcd4;
+    text-shadow: 0 0 8px #00bcd4;
+}
+
+/* Brand Buttons in Subtle Attitude – also thumbnail-scaled */
+.brand-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.brand-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    max-width: 280px;
+}
+
+.brand-btn:hover {
+    transform: scale(1.06);
+}
+
+.brand-thumb {
+    width: 100%;
+    max-width: 220px;              /* Slightly larger thumbnails for brand buttons */
+    height: auto;
+    background: transparent;
+    border-radius: 12px;
+    border: 2px solid #00bcd4;
+    box-shadow: 0 0 20px rgba(0, 188, 212, 0.5);
+}
+
+/* Section Buttons (Tech, Journals, Unfolding) */
 .section-button {
     display: inline-block;
     margin: 2.5rem 0 3.5rem;
@@ -165,6 +238,97 @@ body {
     background: rgba(0, 188, 212, 0.18);
     box-shadow: 0 0 30px rgba(0, 188, 212, 0.8);
     transform: translateY(-3px);
+}
+
+/* Modal Styling – shared for artist, category, founder/brand */
+.info-modal,
+.category-modal,
+.brand-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999 !important;
+    visibility: visible;
+    opacity: 1;
+}
+
+.modal-content {
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.92), rgba(5, 25, 35, 0.92));
+    color: #ffffff;
+    padding: 2.5rem;
+    border-radius: 16px;
+    border: 2px solid #00bcd4;
+    box-shadow: 0 0 40px rgba(0, 188, 212, 0.7), 
+                inset 0 0 25px rgba(0, 188, 212, 0.25);
+    max-width: 90%;
+    max-height: 85vh;
+    overflow-y: auto;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    animation: holographic-glow 10s infinite alternate;
+}
+
+.modal-content h2 {
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+    color: #00bcd4;
+    text-shadow: 0 0 15px #00bcd4;
+}
+
+.modal-content p {
+    font-size: 1.15rem;
+    line-height: 1.7;
+    margin: 1.2rem 0;
+    text-shadow: 0 0 6px rgba(0, 188, 212, 0.4);
+}
+
+.modal-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
+    text-align: left;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.modal-content li {
+    margin: 0.8rem 0;
+    font-size: 1.1rem;
+}
+
+.modal-content strong {
+    color: #4dd0e1;
+}
+
+.close-modal-btn {
+    margin-top: 2rem;
+    padding: 0.9rem 2.2rem;
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    border: 2px solid #00bcd4;
+    border-radius: 8px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.1rem;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(0, 188, 212, 0.5);
+    transition: all 0.3s ease;
+}
+
+.close-modal-btn:hover {
+    background: rgba(0, 188, 212, 0.2);
+    box-shadow: 0 0 30px rgba(0, 188, 212, 0.8);
+    transform: translateY(-2px);
+}
+
+/* Holographic glow animation */
+@keyframes holographic-glow {
+    0%   { box-shadow: 0 0 20px rgba(0, 188, 212, 0.4); }
+    50%  { box-shadow: 0 0 45px rgba(77, 208, 225, 0.7); }
+    100% { box-shadow: 0 0 20px rgba(0, 188, 212, 0.4); }
 }
 
 /* Footer */
@@ -199,7 +363,7 @@ body {
     text-decoration: underline;
 }
 
-/* Artist Button */
+/* Artist Signature Button */
 .info-btn {
     position: fixed;
     bottom: 1.5rem;
@@ -221,7 +385,7 @@ body {
     filter: drop-shadow(0 0 15px #00bcd4);
 }
 
-/* Responsive – full width images on mobile */
+/* Responsive */
 @media (max-width: 768px) {
     .hero { padding: 60px 15px 40px; }
     .hero h1 { font-size: 2.4rem; }
@@ -244,10 +408,34 @@ body {
     }
     .section h2 { font-size: 2.2rem; }
 
-    /* Full width on mobile for better fit */
+    /* Full width images on mobile */
     .section-image,
     .support-image {
         max-width: 100%;
+    }
+
+    .category-buttons {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    .category-btn {
+        max-width: 280px;
+    }
+    .category-thumb {
+        max-width: 240px;              /* Larger on mobile for touch */
+    }
+
+    .brand-buttons {
+        flex-direction: column;
+        gap: 2.5rem;
+    }
+    .brand-thumb {
+        max-width: 280px;
+    }
+
+    .modal-content {
+        padding: 1.8rem;
+        font-size: 1rem;
     }
 
     .section-button {
@@ -256,26 +444,4 @@ body {
         width: 100%;
         max-width: 320px;
     }
-}
-.info-modal {
-    position: fixed !important;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.85);
-    display: flex !important;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999 !important;     /* ← bump this high */
-    visibility: visible !important;
-    opacity: 1 !important;
-}
-
-.info-modal-content {
-    z-index: 10000 !important;
-    max-width: 90%;
-    max-height: 85vh;
-    overflow-y: auto;
-}
-
-body.modal-open {
-    overflow: hidden;
 }
