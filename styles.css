@@ -32,7 +32,7 @@ body {
     width: 100%;
     height: 100%;
     object-fit: contain;
-    opacity: 0.12;
+    opacity: 0.45;
 }
 
 .hero-content {
@@ -62,7 +62,7 @@ body {
 }
 
 .hero-main-image {
-    max-width: 90%;
+    max-width: 75%;
     height: auto;
     display: block;
     margin: 2rem auto 0;
@@ -124,7 +124,7 @@ body {
 /* Section images: 65% on desktop, full width on mobile */
 .section-image,
 .support-image {
-    max-width: 65%;
+    max-width: 45%;
     width: 100%;
     height: auto;
     display: block;
@@ -135,7 +135,7 @@ body {
 
 /* Video */
 .section-video {
-    max-width: 100%;
+    max-width: 85%;
     height: auto;
     display: block;
     margin: 2rem auto;
@@ -415,18 +415,18 @@ body {
     }
 
     .category-buttons {
-        flex-direction: column;
+        flex-direction: row;
         gap: 2rem;
     }
     .category-btn {
-        max-width: 280px;
+        max-width: 120px;
     }
     .category-thumb {
-        max-width: 240px;              /* Larger on mobile for touch */
+        max-width: 120px;              /* Larger on mobile for touch */
     }
 
     .brand-buttons {
-        flex-direction: column;
+        flex-direction: row;
         gap: 2.5rem;
     }
     .brand-thumb {
