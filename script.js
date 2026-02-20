@@ -26,7 +26,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     function openModal(type) {
-        // Remove any existing modal
         const existing = document.querySelector('.info-modal, .category-modal, .brand-modal');
         if (existing) existing.remove();
 
@@ -110,7 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         const modal = document.createElement('div');
-        modal.className = type === 'artist' ? 'info-modal' : (type.includes('envision') || type.includes('atlas') || type.includes('dreamcatcher') ? 'category-modal' : 'brand-modal');
+        modal.className = type === 'artist' ? 'info-modal' : (['envision','your-atlas','dreamcatcher'].includes(type) ? 'category-modal' : 'brand-modal');
         modal.innerHTML = `
             <div class="modal-content">
                 <h2>${title}</h2>
@@ -122,7 +121,6 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.appendChild(modal);
         document.body.classList.add('modal-open');
 
-        // Close handlers
         const closeBtn = modal.querySelector('.close-modal-btn');
         closeBtn.addEventListener('click', closeModal);
 
@@ -138,5 +136,21 @@ document.addEventListener('DOMContentLoaded', () => {
             modal.remove();
             document.body.classList.remove('modal-open');
         }
+    }
+
+    // Fullscreen for Unfolding video on mobile
+    const fullscreenBtn = document.querySelector('.fullscreen-btn');
+    const unfoldingVideo = document.getElementById('unfolding-video');
+
+    if (fullscreenBtn && unfoldingVideo) {
+        fullscreenBtn.addEventListener('click', () => {
+            if (unfoldingVideo.requestFullscreen) {
+                unfoldingVideo.requestFullscreen();
+            } else if (unfoldingVideo.webkitRequestFullscreen) {
+                unfoldingVideo.webkitRequestFullscreen();
+            } else if (unfoldingVideo.msRequestFullscreen) {
+                unfoldingVideo.msRequestFullscreen();
+            }
+        });
     }
 });

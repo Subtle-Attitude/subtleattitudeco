@@ -32,7 +32,7 @@ body {
     width: 100%;
     height: 100%;
     object-fit: contain;
-    opacity: 0.35;
+    opacity: 0.45;
 }
 
 .hero-content {
@@ -121,7 +121,7 @@ body {
     text-shadow: 0 0 10px #00bcd4;
 }
 
-/* Section images: 65% on desktop, full width on mobile */
+/* Section images: 45% on desktop, full width on mobile */
 .section-image,
 .support-image {
     max-width: 45%;
@@ -144,7 +144,39 @@ body {
     box-shadow: 0 0 30px rgba(0, 188, 212, 0.4);
 }
 
-/* Category Buttons in Theory – horizontal thumbnails (scaled down) */
+/* Video Wrapper + Fullscreen Button */
+.video-wrapper {
+    position: relative;
+    max-width: 100%;
+    margin: 2rem auto;
+}
+
+.fullscreen-btn {
+    display: none;
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0.8rem 1.6rem;
+    background: rgba(0, 0, 0, 0.7);
+    color: #00bcd4;
+    border: 2px solid #00bcd4;
+    border-radius: 8px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(0, 188, 212, 0.5);
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.fullscreen-btn:hover {
+    background: rgba(0, 188, 212, 0.2);
+    box-shadow: 0 0 25px rgba(0, 188, 212, 0.8);
+}
+
+/* Category Buttons in Theory – horizontal thumbnails */
 .category-buttons {
     display: flex;
     flex-wrap: wrap;
@@ -168,9 +200,9 @@ body {
 
 .category-thumb {
     width: 100%;
-    max-width: 180px;              /* Thumbnail size – adjust this value if needed */
+    max-width: 180px;
     height: auto;
-    background: transparent;       /* Ensures transparency shows */
+    background: transparent;
     border-radius: 12px;
     border: 2px solid rgba(0, 188, 212, 0.5);
     box-shadow: 0 0 15px rgba(0, 188, 212, 0.4);
@@ -186,7 +218,7 @@ body {
     text-shadow: 0 0 8px #00bcd4;
 }
 
-/* Brand Buttons in Subtle Attitude – also thumbnail-scaled */
+/* Brand Buttons in Subtle Attitude */
 .brand-buttons {
     display: flex;
     flex-wrap: wrap;
@@ -209,7 +241,7 @@ body {
 
 .brand-thumb {
     width: 100%;
-    max-width: 220px;              /* Slightly larger thumbnails for brand buttons */
+    max-width: 220px;
     height: auto;
     background: transparent;
     border-radius: 12px;
@@ -217,7 +249,7 @@ body {
     box-shadow: 0 0 20px rgba(0, 188, 212, 0.5);
 }
 
-/* Section Buttons (Tech, Journals, Unfolding) */
+/* Section Buttons */
 .section-button {
     display: inline-block;
     margin: 2.5rem 0 3.5rem;
@@ -240,7 +272,7 @@ body {
     transform: translateY(-3px);
 }
 
-/* Modal Styling – shared for artist, category, founder/brand */
+/* Modal Styling */
 .info-modal,
 .category-modal,
 .brand-modal {
@@ -261,8 +293,7 @@ body {
     padding: 2.5rem;
     border-radius: 16px;
     border: 2px solid #00bcd4;
-    box-shadow: 0 0 40px rgba(0, 188, 212, 0.7), 
-                inset 0 0 25px rgba(0, 188, 212, 0.25);
+    box-shadow: 0 0 40px rgba(0, 188, 212, 0.7), inset 0 0 25px rgba(0, 188, 212, 0.25);
     max-width: 90%;
     max-height: 85vh;
     overflow-y: auto;
@@ -408,29 +439,37 @@ body {
     }
     .section h2 { font-size: 2.2rem; }
 
-    /* Full width images on mobile */
     .section-image,
     .support-image {
         max-width: 100%;
     }
 
+    .video-wrapper {
+        margin: 1.5rem auto;
+    }
+
+    .fullscreen-btn {
+        display: block;
+    }
+
     .category-buttons {
         flex-direction: row;
-        gap: 2rem;
+        gap: 1rem;
+        flex-wrap: wrap;
     }
     .category-btn {
         max-width: 120px;
     }
     .category-thumb {
-        max-width: 120px;              /* Larger on mobile for touch */
+        max-width: 120px;
     }
 
     .brand-buttons {
         flex-direction: row;
-        gap: 2.5rem;
+        gap: 1.5rem;
     }
     .brand-thumb {
-        max-width: 280px;
+        max-width: 180px;
     }
 
     .modal-content {
