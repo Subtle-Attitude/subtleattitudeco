@@ -33,6 +33,12 @@
       "src": "/images/(.*)",
       "dest": "/images/$1"
     },
+
+
+    { "src": "/returns", "dest": "/returns.html" },
+    { "src": "/privacy", "dest": "/privacy.html" },
+
+
     { "src": "/(.*)", "dest": "/index.html" }
   ]
 }
