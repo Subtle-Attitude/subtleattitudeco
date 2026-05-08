@@ -424,6 +424,37 @@ body {
     text-decoration: underline;
 }
 
+/* ==================== NEW: Legal Links for Policies ==================== */
+.legal-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.legal-links h3 {
+    font-size: 1.4rem;
+    margin-bottom: 0.6rem;
+    color: #00bcd4;
+}
+
+/* Style policy buttons to look like clean links while keeping modal functionality */
+.legal-links .brand-btn {
+    background: none;
+    border: none;
+    color: #4dd0e1;
+    font-size: 1rem;
+    text-decoration: underline;
+    cursor: pointer;
+    padding: 0.2rem 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.legal-links .brand-btn:hover {
+    color: #00bcd4;
+    text-decoration: underline;
+}
+
 /* Artist Signature Button */
 .info-btn {
     position: fixed;
@@ -528,5 +559,10 @@ body {
         font-size: 1rem;
         width: 100%;
         max-width: 320px;
+    }
+
+    /* Legal links mobile adjustment */
+    .legal-links {
+        gap: 0.3rem;
     }
 }

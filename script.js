@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Brand Buttons in Subtle Attitude
+    // Brand Buttons in Subtle Attitude (now also includes Legal policy buttons)
     document.querySelectorAll('.brand-btn').forEach(btn => {
         btn.addEventListener('click', () => {
             const modalType = btn.dataset.modal;
@@ -104,6 +104,77 @@ document.addEventListener('DOMContentLoaded', () => {
                     <p>I believe clarity isn’t a lightning strike. It’s a subtle shift — repeated with compassion — until your whole life begins to change.</p>
                 `;
                 break;
+
+            // ==================== NEW: Return & Privacy Policies ====================
+            case 'return-policy':
+                title = 'Return & Refund Policy';
+                content = `
+                    <p><strong>Last Updated: May 2026</strong></p>
+                    <p>Thank you for shopping with Subtle Attitude LLC. We want you to love your journals.</p>
+                    
+                    <strong>Returns Accepted For:</strong>
+                    <ul>
+                        <li>Damaged items upon arrival (torn cover, defective binding, printing errors)</li>
+                        <li>Incorrect item sent (wrong design or version on our end)</li>
+                    </ul>
+                    
+                    <strong>Timeframe:</strong>
+                    <p>Contact us within <strong>14 days</strong> of delivery with photos of the issue and your order number.</p>
+                    
+                    <strong>Not Eligible:</strong>
+                    <ul>
+                        <li>Change of mind</li>
+                        <li>Used or written-in journals</li>
+                        <li>Items showing signs of wear</li>
+                    </ul>
+                    
+                    <strong>Process:</strong>
+                    <ol>
+                        <li>Message us at contact@subtleattitude.co with order details + photos.</li>
+                        <li>Do not ship back until we approve the return.</li>
+                        <li>Return the item in original packaging (you are responsible for return shipping unless it is our error).</li>
+                        <li>After we inspect the return, we will issue a refund to your original payment method within 5–7 business days (original shipping is non-refundable).</li>
+                    </ol>
+                    
+                    <p>International orders: Buyer responsible for all return shipping and customs fees.</p>
+                    <p>Questions? Email <a href="mailto:contact@subtleattitude.co">contact@subtleattitude.co</a></p>
+                `;
+                break;
+
+            case 'privacy-policy':
+                title = 'Privacy Policy';
+                content = `
+                    <p><strong>Last Updated: May 2026</strong></p>
+                    <p>Subtle Attitude LLC (“we”, “us”, “our”) respects your privacy.</p>
+                    
+                    <strong>Information We Collect:</strong>
+                    <ul>
+                        <li>Contact information (name, email) when you reach out</li>
+                        <li>Order information when purchasing through our partners (Lulu, etc.)</li>
+                        <li>Basic website usage data</li>
+                    </ul>
+                    
+                    <strong>How We Use It:</strong>
+                    <ul>
+                        <li>To respond to your inquiries</li>
+                        <li>To process and fulfill orders</li>
+                        <li>To improve our website and offerings</li>
+                    </ul>
+                    
+                    <strong>Sharing:</strong>
+                    <p>We do not sell your personal data. We only share information with fulfillment partners (e.g. Lulu) as needed to complete your order.</p>
+                    
+                    <strong>Your Rights:</strong>
+                    <p>You can request access, correction, or deletion of your data by emailing contact@subtleattitude.co.</p>
+                    
+                    <strong>Cookies:</strong>
+                    <p>We use only essential cookies for site functionality.</p>
+                    
+                    <p>For questions about this policy, please email <a href="mailto:contact@subtleattitude.co">contact@subtleattitude.co</a>.</p>
+                `;
+                break;
+            // =====================================================================
+
             default:
                 return;
         }
